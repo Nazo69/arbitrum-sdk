@@ -14,13 +14,7 @@ import { getL2Network, EthBridger } from '@arbitrum/sdk'
 const l2Network = await getL2Network(
   l2ChainID /** <-- chain id of target Arbitrum chain */
 )
-const ethBridger = new EthBridger(l2Network)
-
-const ethDepositTxResponse = await ethBridger.deposit({
-  amount: utils.parseEther('23'),
-  l1Signer: l1Signer /** <-- connected ethers-js Wallet */,
-  l2Provider: l2Provider /** <--- ethers-js Provider */,
-})
+const ethBridger = new EthBridg
 
 const ethDepositTxReceipt = await ethDepositTxResponse.wait()
 
